@@ -41,15 +41,15 @@ def filter_students(students: List[dict], average_mark: int = 100) -> None:
     """
     filtered_students = [student for student in students if sum(student["marks"])/len(student["marks"]) > average_mark]  # создаем новый фильтрованный список
 
-    print("Имя".ljust(15), "Фамилия".ljust(10), "Экзамены".ljust(30), "Оценки".ljust(20))  # выводим заголовок нашей "таблицы"
+    print("Имя".ljust(15), "Фамилия".ljust(10), "Экзамены".ljust(40), "Оценки".ljust(30))  # выводим заголовок нашей "таблицы"
 
     # вывод информации о прошедших фильтрацию студентах
     for u in filtered_students:
         print(
                 u["name"].ljust(15),
                 u["surname"].ljust(10),
-                ", ".join(u["exams"]).ljust(30),
-                ", ".join(str(val) for val in u["marks"]).ljust(20)
+                ", ".join(u["exams"]).ljust(40),
+                ", ".join(str(val) for val in u["marks"]).ljust(30)
             )
 
 average_mark = int(input("Введите средний балл для фильтрации: "))
