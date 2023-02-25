@@ -55,7 +55,7 @@ ROOT_URLCONF = 'firstwebpage.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'flatpages/template'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

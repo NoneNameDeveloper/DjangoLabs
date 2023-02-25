@@ -1,6 +1,8 @@
-from django.http import HttpResponse
+#from django.http import HttpResponse
+from django.shortcuts import render
 
 
 def home(request):
-    return HttpResponse(u'Привет, мир')
-# Create your views here.
+    return render(request, 'static_handler.html')
+#    return HttpResponse(u'Привет, мир')
+
