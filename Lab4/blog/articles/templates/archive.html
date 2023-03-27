@@ -1,27 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Архив статей</title>
-</head>
+<title>«Архив статей»</title>
+{% load static %}
+	<link rel="stylesheet" href="{{ STATIC_URL }}/static/articles.css">
 <body>
-
 <div class="header">
-    <img src="{{ STATIC_URL }}static/img/logo.png" />
+<img src="https://www.rabstol.net/uploads/gallery/main/476/rabstol_net_fast_and_furious_12.jpg" width="500" height="270"/>
 </div>
-
 <div class="archive">
-    {% for post in posts %}
-        <div class="one-post">
-            <h2 class="post-title">{{ post.title }}</h2>
-            <div class="article-info">
-                <div class="article-author">{{ post.author.username }}</div>
-                <div class="article-created-date">{{ post.created_date }}</div>
-            </div>
-            <p class="article-text">{{ post.get_excerpt }}</p>
-        </div>
-    {% endfor %}
-</div>
+{% for post in posts %}
+<div class="one-post">
 
+<h2 class="post-title">
+<a href="http://127.0.0.1:8000/article/{{post.id}}">{{post.title}}</a>
+</h2>
+
+<div class="article-info">
+<div class="article-author">{{ post.author.username }}</div>
+<div class="article-created- date">{{ post.created_date }}</div>
+</div>
+<p class="article-text">{{ post.get_excerpt }}</p>
+</div>
+{% endfor %}
+
+</div>
 </body>
-</html>
