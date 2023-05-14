@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Авторизация</title>
+		<link rel="stylesheet" href="{{ STATIC_URL }}/static/articles.css">
+	</head>
+	<body>
+		<div class="content">
+			<h1>Авторизоваться</h1>
+			<form method="POST">
+				{% csrf_token %}
+				<input type="text" name="username" placeholder="Имя пользователя" value="{{ form.username }}">
+				<input type="password" name="password" placeholder="Пароль" value="{{ form.password }}">
+				<input type="submit" value="Авторизоваться">
+			</form>
+			{{ form.errors }}
+		</div>
+	</body>
+</html>

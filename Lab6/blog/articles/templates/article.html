@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	{% load static %}
+	<link rel="stylesheet" href="{{ STATIC_URL }}/static/articles.css">
+	<title>{{post.title}}</title>
+</head>
+
+<body>
+	<div class="archive">
+	    <div class="header">
+	        <p>
+	            {% load static %}
+	            <img src="https://www.rabstol.net/uploads/gallery/main/476/rabstol_net_fast_and_furious_12.jpg" width="500" height="270"/>
+                <div class="navigation_block">
+                <a href="{% url 'archive' %}">Все статьи</a>
+                {% if request.user.is_anonymous %}
+                <a href="{% url 'register' %}">Регистрация</a>
+                <a href="{% url 'login' %}">Логин</a>
+                {% else %}
+                <a href="{% url 'logout' %}">Выход из аккаунта</a>
+                {% endif %}
+	</div>
+	        </p>
+	    </div>
+        <div class="one-post">
+            <h2 class="post-title">{{post.title}}</h2>
+	        <div class="article-info">
+
+                <div class="article-author">{{ post.author.username }}</div>
+                <div class="article-created-date">{{ post.created_date }}</div>
+            </div>
+            <p class="article-text">{{ post.get_excerpt }}</p>
+        </div>
+    </div>
+
+</body>
+</html>
