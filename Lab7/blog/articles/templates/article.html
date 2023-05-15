@@ -25,9 +25,8 @@
 	        </p>
 	    </div>
         <div class="one-post">
-            <div class="fold-button"><ins>свернуть</ins></div>
-
             <h2 class="post-title">{{post.title}}</h2>
+                        <div class="fold-button"><ins>свернуть</ins></div>
 	        <div class="article-info">
 
                 <div class="article-author">{{ post.author.username }}</div>
@@ -36,6 +35,6 @@
             <p class="article-text">{{ post.get_excerpt }}</p>
         </div>
     </div>
-
+<script src="{{ STATIC_URL }}/static/hello_world.js"></script>
 </body>
 </html>
